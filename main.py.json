@@ -1,0 +1,28 @@
+[
+    {
+        "next": 1,
+        "trigger": "typing",
+        "state": "color",
+        "context": [0, 0, 0],
+        "text": [
+            "Make your game!"
+        ]
+    },
+    {
+        "next": 2,
+        "trigger": "timing",
+        "timing": 10.0,
+        "state": "video",
+        "context": "idle",
+        "text": []
+    },
+    {
+        "next": -1,
+        "trigger": "typing",
+        "state": "",
+        "context": "",
+        "text": [
+            ""
+        ]
+    }
+]
