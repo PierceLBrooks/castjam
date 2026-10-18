@@ -17,12 +17,12 @@
         "text": []
     },
     {
-        "next": -1,
+        "next": 1,
         "trigger": "typing",
         "state": "",
         "context": "",
         "text": [
-            ""
+            "This is very difficult..."
         ]
     }
 ]

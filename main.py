@@ -49,9 +49,9 @@ stages = json.loads(data)
 if ((stage >= 0) and (stage < len(stages))):
     if ("trigger" in stages[stage]):
         trigger = stages[stage]["trigger"]
-    if (("state" in stages[stage]) and (len(("state" in stages[stage])) > 0)):
+    if (("state" in stages[stage]) and (len((stages[stage]["state"])) > 0)):
         state = stages[stage]["state"]
-    if (("context" in stages[stage]) and (len(("context" in stages[stage])) > 0)):
+    if (("context" in stages[stage]) and (len((stages[stage]["context"])) > 0)):
         context = stages[stage]["context"]
     if ("text" in stages[stage]):
         text = stages[stage]["text"]
@@ -77,11 +77,14 @@ while (run):
     if (stage == stage_previous):
         if ((trigger == "timing") and (transition > stages[stage]["timing"])):
             stage = next
+            transition = 0.0
         elif ((trigger == "charge") and (charge > stages[stage]["charge"])):
             stage = next
+            transition = 0.0
     if (typing > 0.0):
         if ((stage == stage_previous) and (trigger == "typing")):
             stage = next
+            transition = 0.0
         if not (mouse > 0.0):
             charge += delta
         typing -= delta
@@ -112,9 +115,9 @@ while (run):
         if ((stage >= 0) and (stage < len(stages))):
             if ("trigger" in stages[stage]):
                 trigger = stages[stage]["trigger"]
-            if (("state" in stages[stage]) and (len(("state" in stages[stage])) > 0)):
+            if (("state" in stages[stage]) and (len((stages[stage]["state"])) > 0)):
                 state = stages[stage]["state"]
-            if (("context" in stages[stage]) and (len(("context" in stages[stage])) > 0)):
+            if (("context" in stages[stage]) and (len((stages[stage]["context"])) > 0)):
                 context = stages[stage]["context"]
             if ("text" in stages[stage]):
                 text = stages[stage]["text"]
