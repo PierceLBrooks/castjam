@@ -49,7 +49,7 @@
     {
         "next": 6,
         "trigger": "charge",
-        "charge": 50.0,
+        "charge": 115.0,
         "state": "",
         "context": "",
         "text": [
