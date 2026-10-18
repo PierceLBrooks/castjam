@@ -50,6 +50,7 @@
         "next": 6,
         "trigger": "charge",
         "charge": 115.0,
+        "threshold": 5.0,
         "state": "",
         "context": "",
         "text": [
