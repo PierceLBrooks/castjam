@@ -5,11 +5,20 @@
         "state": "color",
         "context": [0, 0, 0],
         "text": [
-            "Make your game!"
+            "I have to make this game for the game jam!"
         ]
     },
     {
         "next": 2,
+        "trigger": "typing",
+        "state": "color",
+        "context": [0, 0, 0],
+        "text": [
+            "There's only a couple hours left, so I'll have to work quick..."
+        ]
+    },
+    {
+        "next": 3,
         "trigger": "timing",
         "timing": 10.0,
         "state": "video",
@@ -17,12 +26,66 @@
         "text": []
     },
     {
-        "next": 1,
+        "next": 4,
         "trigger": "typing",
+        "threshold": 5.0,
         "state": "",
         "context": "",
         "text": [
-            "This is very difficult..."
+            "This is so difficult...",
+            "My ideas are so CONSTIPATED up in my BRAIN!"
+        ]
+    },
+    {
+        "next": 5,
+        "trigger": "typing",
+        "threshold": 5.0,
+        "state": "",
+        "context": "",
+        "text": [
+            "I wonder..."
+        ]
+    },
+    {
+        "next": 6,
+        "trigger": "charge",
+        "charge": 50.0,
+        "state": "",
+        "context": "",
+        "text": [
+            "If I charge up my game dev powers, could I still finish in time?!?!?!"
+        ]
+    },
+    {
+        "next": 7,
+        "trigger": "timing",
+        "timing": 20.0,
+        "state": "video",
+        "context": "to_monitor",
+        "text": [
+            "Wait, why isn't the power charge getting this game finished...?",
+            "I must be stuck in some kind of time loop!"
+        ]
+    },
+    {
+        "next": 8,
+        "trigger": "timing",
+        "timing": 10.0,
+        "state": "video",
+        "context": "from_monitor",
+        "text": [
+            "The only way to complete a game during a game jam time loop",
+            "is to ask Jim Hudson to help, but he's not here right now."
+        ]
+    },
+    {
+        "next": 2,
+        "trigger": "typing",
+        "threshold": 5.0,
+        "state": "",
+        "context": "",
+        "text": [
+            "I'm all alone in the ATC with no one around to bounce ideas off of :("
         ]
     }
 ]

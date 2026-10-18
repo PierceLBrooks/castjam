@@ -41,6 +41,7 @@ typing = 0.0
 mouse = 0.0
 life = 0.0
 transition = 0.0
+threshold = 0.0
 fps = None
 descriptor = open(os.path.join(os.getcwd(), os.path.basename(sys.argv[0])+".json"), "r")
 data = descriptor.read()
@@ -61,6 +62,8 @@ if ((stage >= 0) and (stage < len(stages))):
         mouse = stages[stage]["mouse"]
     if ("typing" in stages[stage]):
         typing = stages[stage]["typing"]
+    if ("threshold" in stages[stage]):
+        threshold = stages[stage]["threshold"]
 
 while (run):
     """
@@ -76,15 +79,18 @@ while (run):
     transition += delta
     if (stage == stage_previous):
         if ((trigger == "timing") and (transition > stages[stage]["timing"])):
-            stage = next
-            transition = 0.0
+            if (transition > threshold):
+                stage = next
+                transition = 0.0
         elif ((trigger == "charge") and (charge > stages[stage]["charge"])):
-            stage = next
-            transition = 0.0
+            if (transition > threshold):
+                stage = next
+                transition = 0.0
     if (typing > 0.0):
         if ((stage == stage_previous) and (trigger == "typing")):
-            stage = next
-            transition = 0.0
+            if (transition > threshold):
+                stage = next
+                transition = 0.0
         if not (mouse > 0.0):
             charge += delta
         typing -= delta
@@ -127,6 +133,8 @@ while (run):
                 mouse = stages[stage]["mouse"]
             if ("typing" in stages[stage]):
                 typing = stages[stage]["typing"]
+            if ("threshold" in stages[stage]):
+                threshold = stages[stage]["threshold"]
         stage_previous = stage
     if not (state == state_previous):
         if (state == "video"):
